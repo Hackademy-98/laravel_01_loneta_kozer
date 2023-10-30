@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SerieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',function(){
     return view('index');
-});
+})->name('home');
 
 // rotta per i film
 Route::get('/films',function(){
@@ -33,20 +34,11 @@ Route::get('/films',function(){
     ];
     return view('films', ['film'=>$films]);
     
-});
+})->name('index.films');
 
-Route::get('/series',function(){
-     $series = [
-        ["name" => "Gilmore Girls", "year" =>2000, "descripsion" => "Racconta le vicende di madre e figlia unite da un legame molto profondo", "img" => "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpLxqSb26vnIDFdnIr54hjXMZHjXLCYJmIhaNnr1xN_i22HZGK"],
-        ["name" => "Viking", "year" =>2016, "descripsion" => "Racconta le vicende di madre e figlia unite da un legame molto profondo", "img" => "https://www.filmtv.it/imgbank/GALLERYXL/R201712/Viking_fronte_NEUTRO.jpg"],
-        ["name" => "Gomorra", "year" =>2008, "descripsion" => "Racconta le vicende di madre e figlia unite da un legame molto profondo", "img" => "https://venetofilmcommission.com/wp-content/uploads/2022/02/2008-GOMORRA-ESP.webp"],
-        ["name" => "Beverly Hills 90210", "year" =>1990, "descripsion" => "Racconta le vicende di madre e figlia unite da un legame molto profondo", "img" => "https://m.media-amazon.com/images/I/81+hRhp7djL._AC_UF1000,1000_QL80_.jpg"],
-        ["name" => "The O.C.", "year" =>2002, "descripsion" => "Racconta le vicende di madre e figlia unite da un legame molto profondo", "img" => "https://m.media-amazon.com/images/I/61-8E1ivkJL._SL500_.jpg"],
-        ["name" => "One Tree Hill", "year" =>2003, "descripsion" => "Racconta le vicende di madre e figlia unite da un legame molto profondo", "img" => "https://m.media-amazon.com/images/I/715CXlw5dyL._AC_UF1000,1000_QL80_.jpg"]
-    ];
-
-    return view('series',['serieTV'=>$series]);
-
-});
+Route::get('/series',[SerieController::class,'index'])->name('index.series');
    
+
+// rotta della pagina del detaglio delle serie TV
+Route::get('/serie/detail/{name}',[SerieController::class,'show'])->name('show.series');
 

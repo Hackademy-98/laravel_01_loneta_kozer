@@ -9,8 +9,8 @@
   <body>
   <h1 class="text-info bg-danger">Oggi al Cinema</h1>
     <ul>
-        <li class="text-danger"><a href="/series">Pagina 1</a></li>
-        <li><a href="/films">Pagina 2</a></li>
+        <li class="text-danger"><a href="{{route('index.series')}}">TV Series</a></li>
+        <li><a href="{{route('index.films')}}">Film</a></li>
 
         
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">

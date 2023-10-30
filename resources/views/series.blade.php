@@ -10,8 +10,8 @@
     <h1>Le Mie Serie Preferite !</h1>
     <h2>Pagina 1</h2>
     <ul>
-        <li><a href="/">Homepage</a></li>
-        <li><a href="/films">Pagina 2</a></li>
+        <li><a href="{{route('home')}}">Homepage</a></li>
+        <li><a href="{{route('index.films')}}">Filmi</a></li>
     </ul>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -52,13 +52,14 @@
 <div class="container">
     <div class="row">
     @foreach($serieTV as $serie)
-<div class="col-3">
+<div class="col-12 col-md-3 d-flex justify-content-center">
 <div class="card" style="width: 18rem;">
   <img src="{{$serie["img"]}}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{$serie["name"]}}</h5>
     <p class="card-text">{{$serie["descripsion"]}}</p>
-    <a href="#" class="btn btn-primary">{{$serie["year"]}}</a>
+    <p class="">{{$serie["year"]}}</p>
+    <a href="{{route('show.series',["name"=> $serie["name"]])}}" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 </div>
