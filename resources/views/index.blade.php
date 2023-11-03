@@ -1,4 +1,16 @@
 <x-layout title="Home">
+<div class="container bg-success">
+  <div class="row">
+    <div class="col-6">
+      @if(session()->has('success'))
+  <div>
+    {{session('success')}}
+  </div>
+  @endif
+    </div>
+  </div>
+</div>
+  
   <h1 class="text-info bg-danger">Oggi al Cinema</h1>
   
         
