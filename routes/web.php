@@ -33,3 +33,7 @@ Route::get('/serie/detail/{name}',[SerieController::class,'show'])->name('show.s
 // rotta per visuualizzareun form per conttatare
 Route::get('/contact-us',[PublicController::class,'form'])->name('form');
 Route::post('/contact-email',[PublicController::class,'sendEmail'])->name('send.email');
+
+// rotta per visualizzazione del forum per la creazione del film
+Route::get('/movie/create',[FilmController::class,'create'])->name('create.movie');
+Route::post('/movie/store',[FilmController::class,'store'])->name('store.movie');
