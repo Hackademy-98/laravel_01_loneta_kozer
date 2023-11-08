@@ -41,7 +41,7 @@ class FilmController extends Controller
 
     }
     public function store(Request $request){
-        dd();
+        $file = $request->file('img');
        
     //    $movie = new Movie();
     //    $movie->title = $request->title;
@@ -52,7 +52,7 @@ class FilmController extends Controller
         "title" => $request->title,
         "description" => $request->description,
         "year" => $request->year,
-        "img" => $file ? $file->store('public/images') : 'public/images/default.png'
+        "img" =>  $file ? $file->store('public/images') : 'public/images/default.png'
     ]);
     return redirect()->route('create.movie'); 
     }  //
