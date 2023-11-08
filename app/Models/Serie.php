@@ -4,9 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Serie;
 
-class Movie extends Model
+class Serie extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','description','year','img'];
+    protected $fillable = ['title','year','description'];
 }

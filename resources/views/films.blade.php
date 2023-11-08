@@ -5,8 +5,8 @@
 
 <div class="container">
   <div class="row">
-  @foreach($film as $film)
-   {{-- <x-card title="{{$film['name']}}" path="{{$film['img']}}"/> --}}
+  @foreach($films as $film)
+   {{-- <x-card title="{{$film['data']}}" path="{{$film['img']}}"/> --}}
 
    <x-card :data="$film" route="films"/>
     @endforeach

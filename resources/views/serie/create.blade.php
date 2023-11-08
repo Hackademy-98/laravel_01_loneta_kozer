@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form method="POST" action="{{ route('store.movie')}}" enctype="multipart/form-data">
+                <form method="POST" action= "{{ route('store.serie')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                       <label for="title" class="form-label">Title</label>
