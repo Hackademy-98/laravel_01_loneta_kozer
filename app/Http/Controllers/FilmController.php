@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Http\Requests\MovieStoreRequest;
 
 class FilmController extends Controller
 {
@@ -40,7 +41,7 @@ class FilmController extends Controller
         return view('movie.create');
 
     }
-    public function store(Request $request){
+    public function store(MovieStoreRequest $request){
         $file = $request->file('img');
        
     //    $movie = new Movie();
